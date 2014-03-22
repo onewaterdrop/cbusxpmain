@@ -1,6 +1,0 @@
-<?php
-
-		$zone_DB[name][451]='ÇÅÎ÷Çø';
-		$zone_DB[fup][451]='109';
-		$zone_DB['dirname'][451]='QiaoXiQu';
-		?>

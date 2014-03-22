@@ -1,3 +1,0 @@
-<?php	
-		$styledb['name']='Ä¬ÈÏ·ç¸ñ';
-		$styledb['keywords']='default';

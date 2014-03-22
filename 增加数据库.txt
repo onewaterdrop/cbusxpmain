@@ -1,2 +1,0 @@
-数据库源程序请到下面http://www.85yp.com/down/index.html 下载
-然后增加到mysql当中即可，然后修改 search/ db_config.php  和php168/mysql_config.php 数据库连接即可
