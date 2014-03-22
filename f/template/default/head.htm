@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<?php
+if($webdb[SystemType]&&!function_exists('get_info_url')){
+@include(PHP168_PATH."$webdb[SystemType]/global.php");
+}
+if($webdb[SystemType]){
+$webdb[Info_guide_word]=$webdb[guide_word];
+}
+$GuideFid[$fid]=str_replace("<a href='$webdb[www_url]' class='guide_menu'>&gt;首页</a>","",$GuideFid[$fid]);
+print <<<EOT
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>$titleDB[title]</title>
+<meta name="keywords" content="$titleDB[keywords]">
+<meta name="description" content="$titleDB[description]"> 
+<link rel="stylesheet" type="text/css" href="$Mdomain/images/$STYLE/default.css">
+</head>
+<SCRIPT LANGUAGE="JavaScript">
+<!--//导航菜单
+function killErr(){
+	//return true;
+}
+window.onerror=killErr;
+//-->
+</SCRIPT>
+<!--
+EOT;
+if($webdb[cookieDomain]){print <<<EOT
+-->
+<SCRIPT LANGUAGE="JavaScript">
+//解决不同域名的框架跨域问题
+document.domain = "$webdb[cookieDomain]";
+</SCRIPT>
+<!--
+EOT;
+}print <<<EOT
+-->
+<SCRIPT LANGUAGE="JavaScript" src="$Mdomain/images/jquery.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" src="$webdb[www_url]/images/default/inc.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" src="$webdb[www_url]/images/default/default.js"></SCRIPT>
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0">
+<DIV id="header_plc">
+	<div id="header_tc">
+    <A HREF="{$city_url}/" id="header_logo"><img src="$Mdomain/images/default/logo.gif" border=0></A>  
+	 	<span id="header_cityName">{$city_DB[name][$city_id]}</br>  
+<!--
+EOT;
+if(count($city_DB[name])>2){
+$url=$webdb[Info_sys]?$webdb[www_url]:$Mdomain;
+print <<<EOT
+-->
+	<div><a href="$url/allcity.html" class="change">[切换城市]</a></div>
+<!--
+EOT;
+}print <<<EOT
+-->     	</span>		
+
+
+<div id="header_searchbar">
+	<form name="form_headsearch"  action="http://search.85yp.com/s/" >
+  <input class="header_keyword" id="header_keyword"  name="wd" value="$keyword"  />
+  <input class="header_btnall"  id="header_searchbtn"    type="button" onclick="cksearch()" value="全站搜索" name="button" />
+  <input type="hidden" name=s value="0">
+  </form>
+</div>
+<div id="header_postgg" style="width:270px;">    
+	<div style="text-align:right;" align="right">
+		<SCRIPT src="$webdb[www_url]/do/hack.php?hack=login&job=js"></SCRIPT>
+	</div>
+        
+    <div style="float:left;width:260px; position:absolute; top:10px">   
+   		<a href="$webdb[www_url]/post.php?choose_cityID=$city_id" target="_blank" style="font-size:18px; font-weight:bold; color:#F00">免费发布信息</a>  	
+    </div>
+    
+	
+	    
+ </div>
+ 
+ 
+	</div>
+    
+</DIV>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function cksearch(){
+	form=document.form_headsearch; 
+	var kw=form.wd.value;
+	if(kw.replace(/\s+/g,"")==''){
+		alert("关键字不能为空!!");
+		form.wd.focus();
+		return false;		
+	}
+	else{
+		//alert("htttp://search.or58.com/s/?wd="+kw);
+		document.location.href="http://search.or58.com/s/?wd="+kw;
+	  //form.submit();	
+	}
+	
+}
+//-->
+</SCRIPT>		  
+          
+
+
+
+ 
+      
+<!--
+EOT;
+if($GuideFid[$fid]){
+print <<<EOT
+-->   
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="nav_guide" align="center">
+  <tr> 
+          
+    <td>当前位置：<a href="$city_url/">首页</a> {$GuideFid[$fid]}</td>
+        </tr>
+      </table>
+	   <!--
+EOT;
+}
+print <<<EOT
+-->
+<SCRIPT LANGUAGE="JavaScript">
+<!--//目的是为了做风格方便
+document.write('<div class="wrap">');
+//-->
+</SCRIPT>
+<!--
+EOT;
+?>
+-->

@@ -1,0 +1,10 @@
+<?php
+
+		$zone_DB[name][781]='Ð¢²ýÏØ';
+		$zone_DB[fup][781]='155';
+		$zone_DB['dirname'][781]='XiaoChangXian';
+		
+		$zone_DB[name][810]='Ð¢ÄÏÇø';
+		$zone_DB[fup][810]='155';
+		$zone_DB['dirname'][810]='XiaoNanQu';
+		?>

@@ -1,0 +1,121 @@
+<!--
+<?php
+print <<<EOT
+--> 
+
+<table width="100%" border="0" cellspacing="1" cellpadding="3" class="tablewidth">
+  <form name="form1" method="post" action="?action=$job">
+    <tr class="head"> 
+      <td colspan="2">模板管理</td>
+    </tr>
+    <tr bgcolor="#FFFFFF"> 
+      <td width="16%">客户广告名称: </td>
+      <td width="84%"> 
+        <input type="text" name="postdb[name]" value="$rss[name]" size="40">
+      </td>
+    </tr>
+    <tr bgcolor="#FFFFFF"> 
+      <td width="16%">客户联系人:</td>
+      <td width="84%"> 
+        <input type="text" name="postdb[username]" value="$rss[username]" size="20">
+      </td>
+    </tr>
+    <tr bgcolor="#FFFFFF"> 
+      <td width="16%">付费类型:</td>
+      <td width="84%"> $money_type</td>
+    </tr>
+    <tr bgcolor="#FFFFFF"> 
+      <td width="16%">客户总共支付广告费:</td>
+      <td width="84%"> 
+        <input type="text" name="postdb[admoney]" size="7" value="$rss[admoney]">
+      </td>
+    </tr>
+    <tr bgcolor="#FFFFFF"> 
+      <td width="16%">广告投放开始日期:</td>
+      <td width="84%"> 
+        <input type="text" name="postdb[begintime]" value="$rss[begintime]">
+        (注意:填写日期只能在此时系统日期后,但绝对不能在这个日期前，请注意日期格式) </td>
+    </tr>
+    <tr bgcolor="#FFFFFF"> 
+      <td width="16%">广告投放结束日期:</td>
+      <td width="84%"> 
+        <input type="text" name="postdb[endtime]" value="$rss[endtime]">
+        $rss2[begintime]</td>
+    </tr>
+    <!--
+EOT;
+if($rsdb[type]=='word'){
+print <<<EOT
+-->
+    <tr bgcolor="#FFFFFF"> 
+      <td width="16%">广告文字</td>
+      <td width="84%"> 
+        <input type="text" name="cdb[word]" size="40" value="$word">
+      </td>
+    </tr>
+    <tr bgcolor="#FFFFFF"> 
+      <td width="16%">链接地址</td>
+      <td width="84%"> 
+        <input type="text" name="cdb[linkurl]" size="60" value="$linkurl">
+      </td>
+    </tr>
+    <!--
+EOT;
+}
+elseif($rsdb[type]=='pic'){
+print <<<EOT
+-->
+    <tr bgcolor="#FFFFFF"> 
+      <td> 图片地址:</td>
+      <td> 
+        <input type="text" name="postdb[picurl]" size="60" value="$picurl">
+      </td>
+    </tr>
+    <tr bgcolor="#FFFFFF"> 
+      <td>链接地址:</td>
+      <td> 
+        <input type="text" name="cdb[linkurl]" size="60" value="$linkurl">
+      </td>
+    </tr>
+    <!--
+EOT;
+}
+elseif($rsdb[type]=='flash'){
+print <<<EOT
+-->
+    <tr bgcolor="#FFFFFF"> 
+      <td>FLASH地址:</td>
+      <td> 
+        <input type="text" name="postdb[flashurl]" size="60" value="$flashurl">
+      </td>
+    </tr>
+    <!--
+EOT;
+}
+elseif($rsdb[type]=='code'){
+print <<<EOT
+-->
+    <tr bgcolor="#FFFFFF"> 
+      <td>广告代码:</td>
+      <td> 
+        <textarea name="cdb[code]" cols="60" rows="7">$code</textarea>
+      </td>
+    </tr>
+    <!--
+EOT;
+}
+print <<<EOT
+-->
+    <tr bgcolor="#FFFFFF"> 
+      <td colspan="2" align="center"> 
+        <input type="hidden" name="postdb[pid]" value="$rsdb[id]">
+        <input type="submit" name="Submit" value="提 交">
+        <input type="hidden" name="id" value="$id">
+      </td>
+    </tr>
+  </form>
+</table>
+<!--
+EOT;
+?>
+-->

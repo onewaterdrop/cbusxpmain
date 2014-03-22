@@ -1,0 +1,62 @@
+<!--
+<?php
+print <<<EOT
+-->
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<table width="100%" border="0" cellspacing="1" cellpadding="3" class="tablewidth">
+  <form name="form_work" method="post" action="?action=set">
+    <tr align="center" class="head"> 
+      <td colspan="2">站外推广页设置</td>
+    </tr>
+    <tr bgcolor="#FFFFFF"> 
+      <td width="22%" align="left">每个积分可展示几次:</td>
+      <td width="78%"> 
+        <input type="text" name="webdbs[OutshowMoney]" size="5" value="$webdb[OutshowMoney]">
+        次</td>
+    </tr><tr bgcolor="#FFFFFF"> 
+      <td width="22%" align="left">只随机显示几天内的非付费信息:</td>
+      <td width="78%"> 
+        <input type="text" name="webdbs[OutshowPosttime]" size="5" value="$webdb[OutshowPosttime]">
+        天</td>
+    </tr><tr bgcolor="#FFFFFF"> 
+      <td width="22%" align="left">优先显示多少条付费信息:</td>
+      <td width="78%"> 
+        <input type="text" name="webdbs[OutshowFirstNum]" size="5" value="$webdb[OutshowFirstNum]">
+        条</td>
+    </tr><tr bgcolor="#FFFFFF"> 
+      <td width="22%" align="left">总共显示多少条信息:</td>
+      <td width="78%"> 
+        <input type="text" name="webdbs[OutshowTotalNum]" size="5" value="$webdb[OutshowTotalNum]">
+        条</td>
+    </tr>
+    <tr bgcolor="#FFFFFF" align="center"> 
+      <td align="left">&nbsp;</td>
+      <td align="left"> 
+        <input type="submit" name="Submit" value="提交">
+        <a href="../show.htm" target="_blank">查看效果</a> </td>
+    </tr>
+  </form>
+</table>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function postdo(va){
+	document.form_work.jobs.value=va
+	document.form_work.submit();
+}
+function CheckAll(va){
+	form=document.form_work
+	for (var i=0;i<form.elements.length;i++){
+		var e = form.elements[i];
+		if(va=='all'){
+			e.checked = true;
+		}else{
+			e.checked == true ? e.checked = false : e.checked = true;
+		}
+	}
+}
+//-->
+</SCRIPT>
+<!--
+EOT;
+?>
+-->

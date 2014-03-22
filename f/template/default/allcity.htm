@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--
+<?php
+if($webdb[SystemType]&&!function_exists('get_info_url')){
+@include(PHP168_PATH."$webdb[SystemType]/global.php");
+}
+if($webdb[SystemType]){
+$webdb[Info_guide_word]=$webdb[guide_word];
+}
+$GuideFid[$fid]=str_replace("<a href='$webdb[www_url]' class='guide_menu'>&gt;首页</a>","",$GuideFid[$fid]);
+print <<<EOT
+-->
+<head>
+<title>同地网 - 本地分类信息网|同城分类生活信息|本地黄页网</title>
+<link rel="stylesheet" type="text/css" href="$Mdomain/images/$STYLE/default.css">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="baidu_union_verify" content="232802fd77043e4519d0d02894ee3061">
+<meta name="keywords" content="本地分类信息网,同城分类生活信息,本地黄页网,二手房,求职招聘,兼职" />
+<meta name="description" content="同地网是分类最全信息网站，提供免费发布信息，寻找最新最全的房屋出租、二手房、二手车、二手物品交易、求职招聘等生活信息，涵盖房产、车辆、招工、兼职、黄页等海量的生活分类信息。">
+</head>
+<style type="text/css">
+.mynone {
+	display:none
+}
+</style>
+<SCRIPT LANGUAGE="JavaScript">
+<!--//导航菜单
+function killErr(){
+	return true;
+}
+//window.onerror=killErr;
+//-->
+</SCRIPT>
+<!--
+EOT;
+if($webdb[cookieDomain]){print <<<EOT
+-->
+<SCRIPT LANGUAGE="JavaScript">
+//解决不同域名的框架跨域问题
+document.domain = "$webdb[cookieDomain]";
+</SCRIPT>
+<!--
+EOT;
+}print <<<EOT
+-->
+<SCRIPT LANGUAGE="JavaScript" src="$Mdomain/images/jquery.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" src="$webdb[www_url]/images/default/inc.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" src="$webdb[www_url]/images/default/default.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" src="$webdb[www_url]/images/default/swfobject.js"></SCRIPT>
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0">
+<DIV id="header_plc">
+  <div id="header_tc"> <A HREF="{$city_url}/" id="header_logo"><img src="$Mdomain/images/default/logo.gif" border=0></A>
+    <div id="header_postgg"> 
+      <!--
+EOT;
+$detail=explode("\r\n",$webdb[Info_guide_word]);
+foreach($detail AS $key=>$value){
+if(!$value)continue;
+list($name,$url,$blank,$color,$lid)=explode("|",$value);
+if(ereg("^\/",$url)){
+	$url="$webdb[www_url]$url";
+}elseif(ereg("^list\.php",$url)){
+	$_detail=explode("fid=",$url);
+	$url=get_info_url('',$_detail[1],$city_id);
+}elseif($url=='index.php'){
+	$url="$city_url/";
+}elseif(!ereg("://",$url)){
+	$url="$Mdomain/$url";
+}
+$blank=$blank?"_blank":'';
+$color=$color?"$color":'';
+print <<<EOT
+--> 
+      <a href="$url" target="$blank" >{$name}</a> 
+      <!--
+EOT;
+}print <<<EOT
+--> 
+    </div>
+  </div>
+</DIV>
+<!--
+EOT;
+if($GuideFid[$fid]){
+print <<<EOT
+-->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="nav_guide" align="center">
+  <tr>
+    <td>当前位置：<a href="$city_url/">首页</a> {$GuideFid[$fid]} </td>
+  </tr>
+</table>
+<!--
+EOT;
+}
+print <<<EOT
+--> 
+<SCRIPT LANGUAGE="JavaScript">
+<!--//目的是为了做风格方便
+document.write('<div class="wrap">');
+//-->
+</SCRIPT> 
+<!--
+EOT;
+?>
+--> 
+<!--
+<?php
+print <<<EOT
+-->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" class="MainTable">
+  <tr>
+    <td width="100%" height="150" valign="top" class="Main"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td id="allcitytoptable">
+		  <script type="text/javascript"><!--
+google_ad_client = "ca-pub-0626490200330367";
+/* 主页广告条 */
+google_ad_slot = "4540362792";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script> 
+            <script type="text/javascript"src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script></td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px;" class="hotcity">
+        <tr>
+          <td width="69%">&nbsp;<strong> 
+            <!--
+EOT;
+if($_COOKIE[From_City]){
+print <<<EOT
+--> 
+            <a href="{$city_DB[url][$_COOKIE[From_City]]}">进入{$city_DB[name][$_COOKIE[From_City]]}</font>站&raquo;</a> 
+            <!--
+EOT;
+}elseif($city_id){
+print <<<EOT
+--> 
+            <a href="{$city_DB[url][$city_id]}" style="font-size:16px">进入{$city_DB[name][$city_id]}站&raquo;</a> 
+            <!--
+EOT;
+}else{
+print <<<EOT
+--> 
+            <a>请选择一个城市</a> 
+            <!--
+EOT;
+}
+print <<<EOT
+--> 
+            </strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font  style=" color:#F00">推荐城市:</font> 
+            <!--
+EOT;
+$i=0;
+foreach($city_DB[name] AS $key2=>$value2){
+if(!$key2||++$i>7)break;
+print <<<EOT
+--> 
+            <a href="{$city_DB[url][$key2]}" style="font-size:14px; font-weight:bold">$value2</a> 
+            <!--
+EOT;
+}
+print <<<EOT
+--></td>
+          <td width="31%" align="right">请选择一个城市↓</td>
+        </tr>
+      </table>
+      
+      <!--
+EOT;
+if($webdb[Info_allcityType]==1){
+print <<<EOT
+-->
+      
+      <table width="99%" border="0" cellspacing="1" cellpadding="3" class="dragTable">
+        <tr align="left" height="18" class='head' >
+          <td style="line-height:180%;">城市列表: 
+            <!--
+EOT;
+foreach($listdb AS $key=>$array){
+print <<<EOT
+--> 
+            &nbsp;<a href="#$key">{$key}</a> 
+            <!--
+EOT;
+}print <<<EOT
+--></td>
+        </tr>
+        <tr  style="line-height:150%;">
+          <td align="left" style="border-bottom:1px dotted #ccc;"><!--
+EOT;
+foreach($listdb AS $key=>$array){
+print <<<EOT
+-->
+            
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top:8px;">
+              <tr>
+                <td style="background:#F6F6F6;line-height:170%;" align="center"><b><a name='$key'></a><font color="#0000FF">$key</font></b></td>
+              </tr>
+              <tr>
+                <td><!--
+EOT;
+foreach($array AS $key2=>$rs){
+$color=$rs[hits]?'color:red;':'';
+print <<<EOT
+--> 
+                  &nbsp;<a href="{$city_DB[url][$rs[fid]]}" style="font-size:15px;$color">{$rs[name]}</a>&nbsp;&nbsp; 
+                  <!--
+EOT;
+}print <<<EOT
+--></td>
+              </tr>
+            </table>
+            
+            <!--
+EOT;
+}print <<<EOT
+--></td>
+        </tr>
+      </table>
+      
+      <!--
+EOT;
+}else{
+print <<<EOT
+--> 
+      <!--
+EOT;
+foreach($area_DB[name] AS $key=>$value){
+print <<<EOT
+-->
+      
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="allcity">
+        <tr>
+          <td class="L">$value</td>
+          <td class="R"><!--
+EOT;
+foreach($city_DB[$key] AS $key2=>$value2){
+$color=$city_DB[hits][$key2]?'color:red;':'';
+print <<<EOT
+--> 
+            <a href="{$city_DB[url][$key2]}" style="$color">$value2</a> 
+            <!--
+EOT;
+}
+print <<<EOT
+--></td>
+        </tr>
+      </table>
+      
+      <!--
+EOT;
+}
+print <<<EOT
+--> 
+      <!--
+EOT;
+}
+print <<<EOT
+--></td>
+  </tr>
+</table>
+<div class="allcity_news"> &nbsp;<strong>最新信息</strong><br>
+  {$show} </div>
+<div class="wordfriendlink">
+  <dt>友情连接</dt>
+  <!--
+EOT;
+foreach($friendlinkDB[1] AS $key=>$rs){
+print <<<EOT
+-->
+  <dd> <A HREF="$rs[url]" target=_blank><img alt="名称:$rs[name]\r\n描述:$rs[descrip]" src="$rs[logo]" width="88" height="31" border=0></A> </dd>
+  <!--
+EOT;
+}
+print <<<EOT
+--> 
+  
+  <!--
+EOT;
+foreach($friendlinkDB[0] AS $key=>$rs){
+print <<<EOT
+--> 
+  <A HREF="$rs[url]" target="_blank" title="描述:$rs[descrip]">$rs[name]</A>&nbsp; 
+  <!--
+EOT;
+}
+print <<<EOT
+--> 
+</div>
+
+<!--
+EOT;
+?>
+--> 
+

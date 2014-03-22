@@ -1,0 +1,60 @@
+<!--
+<?php
+$Mdirname=Mdirname;
+print <<<EOT
+--> 
+
+<table width="100%" border="0" cellspacing="1" cellpadding="3" class="tablewidth">
+  <tr class="head" align="center"> 
+    <td width="16%">广告位名称</td>
+    <td width="15%">正在展示的广告个数</td>
+    <td width="14%">销售总数</td>
+    <td width="13%">广告总个数</td>
+    <td width="11%">关闭与否</td>
+    <td width="31%">广告位管理</td>
+  </tr>
+  <!--
+EOT;
+foreach($listdb AS $key=>$rs){
+print <<<EOT
+-->
+  <tr bgcolor="#FFFFFF"> 
+    <td width="16%" align="center">{$rs[name]}</td>
+    <td width="15%" align="center">$rs[AdNum] </td>
+    <td width="14%" align="center">$rs[AllAdNum]</td>
+    <td width="13%" align="center">{$rs[adnum]}</td>
+    <td width="11%" align="center">$rs[isclose]</td>
+    <td width="31%" align="center"><a href="?job=editadplace&id=$rs[id]">修改</a> 
+      / <a href="../buyad.php?job=buy&id=$rs[id]" target="_blank">投放</a> / 
+      <input type="hidden" name="hiddenField" value="<SCRIPT LANGUAGE='JavaScript' src='$webdb[www_url]/$Mdirname/ad.php?job=js&id=$rs[id]&city_id=\$city_id'></SCRIPT>" id="ja_$rs[id]">
+<a href="#" onClick="JM_cc('ja_$rs[id]');alert('代码复制成功，你可以粘贴在网页里需要显示的地方,即可显示广告！')"> 代码</a> 
+      / <a href="?id=$rs[id]&action=deleteadplace" onclick="return confirm('你确认要删除这个广告吗?')">删除</a></td>
+  </tr>
+  <!--
+EOT;
+}
+print <<<EOT
+-->
+</table>
+<br>
+<table width="100%" border="0" cellspacing="1" cellpadding="3" class="tablewidth">
+  <tr class="head" align="center"> 
+    <td align="left">说明</td>
+  </tr>
+   
+  <tr bgcolor="#FFFFFF"> 
+    <td>广告调用方法,点击以上每一个广告位对应的&quot;代码&quot;然后复制成功,把他粘贴到你的模板需要的地方即可调用显示</td>
+  </tr>
+   
+</table><SCRIPT LANGUAGE="JavaScript">
+<!--
+function JM_cc(ob){
+var obj=document.getElementById(ob); if (obj) { 
+obj.select();js=obj.createTextRange();js.execCommand("Copy");}
+}
+//-->
+</SCRIPT>
+<!--
+EOT;
+?>
+-->

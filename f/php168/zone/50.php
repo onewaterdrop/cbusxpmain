@@ -1,0 +1,6 @@
+<?php
+
+		$zone_DB[name][773]='½ðÇÅ´´ÒµÔ°';
+		$zone_DB[fup][773]='50';
+		$zone_DB['dirname'][773]='JinQiaoChuangYeYuan';
+		?>

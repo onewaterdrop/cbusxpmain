@@ -1,0 +1,101 @@
+<!--
+<?php
+print <<<EOT
+--> 
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td width="50%" valign="top" style="padding-right:10px;"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" id="newsdongtai">
+        <tr> 
+          <td class="top"> 
+            <!--
+EOT;
+if($pmNUM){print <<<EOT
+-->
+            <a href="$webdb[www_url]/member/pm.php?job=list"><font color="#FF0000">你有新的消息,请注意查收!!</font></a> 
+            <!--
+EOT;
+}else{print <<<EOT
+-->
+            <a href="$webdb[www_url]/member/pm.php?job=list">你暂时没有新消息!</a> 
+            <!--
+EOT;
+}print <<<EOT
+-->
+          </td>
+        </tr>
+        <tr> 
+          <td class="middle"> 
+            <div class="article"><a href="list.php">分类信息管理</a></div>
+            <div class="comment"><a href="comment.php?job=list">评论管理</a></div>
+            <div class="msg"><a href="$webdb[www_url]/member/pm.php?job=list">短消息管理</a></div>
+            <div class="fav"><a href="collection.php">收藏夹管理</a></div>
+          </td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" id="spaceTable">
+        <tr> 
+          <td>你的点卡数:<b><font color="#FF0000"><img src="$webdb[www_url]/member/images/moneycard.gif"> 
+            {$lfjdb[moneycard]}</font></b> 个, 积分:<b><font color="#0000FF"><img src="$webdb[www_url]/member/images/money.gif"> 
+            $lfjdb[money]</font></b> {$webdb[MoneyDW]} (<a href="../jf.php" target="_blank">如何获取积分?</a>)<br>
+            你的空间容量: $space_system + $space_group + $space_user = $rsdb[totalspace] 
+            M(兆)<br>
+            计算方式:系统默认容量 + 用户组默认容量 + 自身容量 = 总空间大小 </td>
+        </tr>
+      </table>
+    </td>
+    <td width="50%"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" id="myinfo">
+        <tr> 
+          <td class="top"> 
+            <div style="float:right;padding-right:8px;"><a href="$webdb[www_url]/member/userinfo.php?uid=$lfjuid" style="color:#fff;">更多...</a></div>
+          </td>
+        </tr>
+        <tr> 
+          <td class="middle"> 
+            <div class="img"><img src="$lfjdb[icon]" onerror="this.src='$webdb[www_url]/images/default/noface.gif'" width="150" height="150"></div>
+            <div class="about">用户UID: <b><font color="#FF0000">$lfjuid</font></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;帐号: 
+              <font color="#0000FF"><b>$lfjid</b></font><br>
+              级别: <font color="#0000FF">$groupdb[grouptitle]</font> ({$lfjdb[C][endtime]})<br>
+              邮箱: $lfjdb[email] <br>
+              所在城市: {$area_db[name][$lfjdb[provinceid]]} {$area_db[name][$lfjdb[cityid]]} 
+              <br>
+              注册时间: $lfjdb[regdate] <br>
+              上次登录时间: $lfjdb[lastvist] </div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" id="map_art">
+  <tr> 
+    <td class="top"><span class="L">我最新发布的免费信息</span><span class="R"><a href="$city_url/post.php" target="_blank">免费发布信息</a></span></td>
+  </tr>
+  <tr> 
+    <td class="middle"> 
+      <!--
+EOT;
+foreach($articleDB AS $key=>$rs){print <<<EOT
+-->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="list $rs[cl]">
+        <tr> 
+          <td class="a1"><a href="$rs[url]" target="_blank">$rs[title]</a></td>
+        </tr>
+        <tr> 
+          <td align="right" class="a2">$rs[posttime] 浏览({$rs[hits]}) 评论({$rs[comments]}) 
+            <a href="../post.php?job=edit&fid=$rs[fid]&id=$rs[id]" target="_blank">修改</a> 
+            <a href="../post.php?action=del&fid=$rs[fid]&id=$rs[id]" onClick="return confirm('你确认要删除吗?不可恢复');" target="_blank">删除</a></td>
+        </tr>
+      </table>
+      <!--
+EOT;
+}print <<<EOT
+-->
+    </td>
+  </tr>
+</table>
+<!--
+EOT;
+?>
+-->

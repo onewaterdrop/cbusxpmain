@@ -1,0 +1,65 @@
+<!--
+<?php
+print <<<EOT
+-->
+<table border="0" cellspacing="1" cellpadding="3" width="100%" class="tablewidth">
+     <tr align="center"> 
+      <td class="head">批量操作</td>
+    </tr>
+    <tr bgcolor="#FFFFFF"> 
+      
+    <td align="center"> 
+      <p><br>
+        <input type="button" name="Submit" value="批量生成辖区目录名" onclick="window.location.href='?action=batch&type=zone_dir'">
+        <br>
+        <br>
+        <br>
+        <input type="button" name="Submit2" value="批量生成地段目录名" onclick="window.location.href='?action=batch&type=street_dir'">
+        <br>
+        <br>
+        <br>
+        泛域名 
+        <input type="text" name="domain2" id="domain2">
+        (如:abc.com) 城市所在目录: 
+        <select name="select" id="citydir">
+          <option value="1">当前目录</option>
+          <option value="2">根目录</option>
+          <option value="3">city目录</option>
+        </select>
+        <input type="button" name="Submit22" value="批量生成城市目录文件" onClick="window.location.href='?action=batch&type=city_dir&citydir='+get_obj('citydir').value+'&domain2='+get_obj('domain2').value">
+        <br>
+      </p>
+      <hr size="1">
+      <p align="left">1.以上三步操作,操作顺序不限,但每一步都要操作,可以重复操作,每增加一个城市的时候,都需要再次操作.<br>
+        2.如果你想实现 http://benjing.abc.com这样城市域名,那必须要在域名管理商那里设置一个泛域名 *.abc.com 指向到当前服务器的IP,然后上面输入abc.com即可.<br>
+      </p>
+      </td>
+    </tr>
+ </table><table border="0" cellspacing="1" cellpadding="3" width="100%" class="tablewidth">
+     <tr > 
+      
+    <td class="head">重要说明!!</td>
+    </tr>
+    <tr bgcolor="#FFFFFF"> 
+      
+    <td> 
+      <p>1.要使用伪静态的话,必须要执行以上每一个步骤.<br>
+        2.如果网站使用的是购买的虚拟空间,没权修改服务器apache配置文件,就无法使用城市二级域名,此时&quot;泛域名&quot;就必须留空.<br>
+        3.如果要使用城市二级域名,请先在域名控制台那里A记录把域名泛解释到本网站服务器所在IP.比如如 *.or58.com A记录到 111.111.111.111 
+        泛域名是*号开头的. <br>
+        设置域名泛解释后,需要等待一段时间才能生效,如何测试是否生效?请ping一下即可,如 ping 任意字母.or58.com 能看到服务器的IP就代表生效了.<br>
+        4.使用城市二级域名,泛域名生效后,就在上面表单输入泛域名,此时必须把*.去掉,如 or58.com 这里是不需要*.号的．只是域名控制台那里需要．再点击生成城市目录文件<br>
+        5.每个城市生成目录文件以后,就需要在服务器绑定每一个城市.具体如何操作,请参考&quot;<a href="center.php?job=html"><font color="#FF0000">伪静态设置</font></a>&quot;<br>
+        6.泛域名留空,就代表不使用城市二级域名,只使用多级目录而已.<br>
+        7.执行第三步的话,会强制修改原来的城市目录名.<br>
+        8.如果使用了城市二级域名,就建议选择&quot;city目录&quot;生成在city目录,有利于目录整洁,方便今后网站维护.<br>
+        9.如果不想更换城市的二级域名,请把泛域名这一项留空.<br>
+        10.要想取消城市二级域名,请在泛域名这一项输入0</p>
+      </td>
+    </tr>
+ </table>
+
+<!--
+EOT;
+?>
+-->
