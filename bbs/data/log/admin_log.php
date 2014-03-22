@@ -24,3 +24,7 @@
 |admin|config/config/site|192.168.1.69|1395518120|/bbs/admin.php?m=config&c=config&a=site||
 |admin|config/config/dosite|192.168.1.69|1395518135|/bbs/admin.php?m=config&c=config&a=dosite|timeTimezone=-5, timeCv=0, refreshtime=0, onlinetime=30, debug=0, managereasons=问题已收集，谢谢反馈！\n建议已收集，谢谢反馈！\n已关注，谢谢反馈！\n广告帖\n恶意灌水\n非法内容\n与版规不符\n重复发帖\n------------------------------------------------\n优秀文章\n原创内容, cookiePath=, cookieDomain=, cookiePre=wH0, csrf_token=85ccc99e93fc5974|
 |admin|config/config/site|192.168.1.69|1395518137|/bbs/admin.php?m=config&c=config&a=site||
+|admin|Login Successful|192.168.1.69|1395523676|/bbs/admin.php?a=login|username=admin, password=***, submit=, csrf_token=85ccc99e93fc5974|
+|admin|default/custom/run|192.168.1.69|1395523681|/bbs/admin.php?c=custom||
+|admin|default/custom/doRun|192.168.1.69|1395523692|/bbs/admin.php?c=custom&a=doRun|customs=array(0=admin_founder, 1=admin_auth, 2=admin_safe, 3=windid_windid, 4=windid_client, 5=windid_notify)csrf_token=85ccc99e93fc5974|
+|admin|default/custom/run|192.168.1.69|1395523694|/bbs/admin.php?c=custom||

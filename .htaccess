@@ -1,3 +1,0 @@
-RewriteEngine On
-Redirect /index.html /bbs
-#RewriteRule ^$ /bbs [L]
