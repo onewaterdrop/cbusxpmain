@@ -215,7 +215,7 @@
 			),
 		),
 		'bbs' => array(
-			'content.length.max' => '5000',
+			'content.length.max' => '111000',
 			'content.length.min' => '3',
 			'post.check.end_hour' => '0',
 			'post.check.end_min' => '0',
@@ -290,6 +290,7 @@
 			'ubb.flash.open' => '1',
 			'ubb.media.open' => '1',
 			'ubb.iframe.open' => '0',
+			'bbsname' => '',
 		),
 		'attachment' => array(
 			'extsize' => array(
@@ -315,12 +316,10 @@
 			'mark.markset' => array(
 				'0' => 'bbs',
 				'1' => 'album',
-				'2' => 'diary',
-				'3' => 'cms',
 			),
 			'mark.position' => '9',
 			'mark.quality' => '90',
-			'mark.text' => 'columbusXP',
+			'mark.text' => 'columbusXP.com',
 			'mark.transparency' => '90',
 			'mark.type' => '2',
 			'pathsize' => '2048',
@@ -336,76 +335,64 @@
 		),
 		'nav' => array(
 			'main' => array(
-				'5' => array(
-					'name' => '<a href="index.php?m=bbs&c=forumlist">版块</a>',
-					'sign' => 'bbs|forumlist|run|',
-				),
 				'0' => array(
-					'name' => '<a href="index.php?m=bbs">论坛</a>',
+					'name' => '<a href="http://columbusxp.com/bbs/index.php?m=bbs">论坛</a>',
 					'sign' => 'bbs|index|run|',
 				),
+				'3' => array(
+					'name' => '<a href="http://columbusxp.com/bbs/index.php?m=bbs&c=forumlist">版块</a>',
+					'sign' => 'bbs|forumlist|run|',
+				),
 				'1' => array(
-					'name' => '<a href="index.php?m=like&c=like">喜欢</a>',
+					'name' => '<a href="http://columbusxp.com/bbs/index.php?m=like&c=like">喜欢</a>',
 					'sign' => 'like|like|run|',
 				),
-				'3' => array(
-					'name' => '<a href="index.php?m=tag">话题</a>',
-					'sign' => 'tag|index|run|',
-				),
-				'4' => array(
-					'name' => '<a href="index.php?m=appcenter">应用</a>',
-					'sign' => 'appcenter|index|run|',
-				),
 				'2' => array(
-					'name' => '<a href="http://open.phpwind.com" target="_blank">云平台</a>',
-					'sign' => '',
+					'name' => '<a href="http://columbusxp.com/bbs/index.php?m=tag">话题</a>',
+					'sign' => 'tag|index|run|',
 				),
 			),
 			'bottom' => array(
 				'0' => array(
-					'name' => '<a href="http://www.phpwind.com/index.php?m=aboutus&a=index&menuid=16">关于phpwind</a>',
-					'sign' => '',
-				),
-				'1' => array(
-					'name' => '<a href="http://www.phpwind.com/index.php?m=aboutus&a=index&menuid=20">联系我们</a>',
-					'sign' => '',
-				),
-				'3' => array(
-					'name' => '<a href="http://www.phpwind.net/thread-htm-fid-54.html">问题反馈</a>',
-					'sign' => '',
+					'name' => '<a href="http://columbusxp.com/bbs/read.php?tid=1&fid=12">联系我们</a>',
+					'sign' => 'bbs|read|run|1|12|',
 				),
 				'2' => array(
-					'name' => '<a href="http://www.phpwind.net/thread-htm-fid-39.html">程序建议</a>',
-					'sign' => '',
+					'name' => '<a href="http://columbusxp.com/bbs/read.php?tid=3&fid=12">志愿者</a>',
+					'sign' => 'bbs|read|run|3|12|',
+				),
+				'1' => array(
+					'name' => '<a href="http://columbusxp.com/bbs/read.php?tid=2&fid=12">支持赞助</a>',
+					'sign' => 'bbs|read|run|2|12|',
 				),
 			),
 			'my' => array(
 				'0' => array(
-					'name' => '<a href="index.php?m=space"><em class="icon_space"></em>我的空间</a>',
+					'name' => '<a href="http://columbusxp.com/bbs/index.php?m=space"><em class="icon_space"></em>我的空间</a>',
 					'sign' => 'space',
 				),
 				'1' => array(
-					'name' => '<a href="index.php?m=my&c=fresh"><em class="icon_fresh"></em>我的关注</a>',
+					'name' => '<a href="http://columbusxp.com/bbs/index.php?m=my&c=fresh"><em class="icon_fresh"></em>我的关注</a>',
 					'sign' => 'fresh',
 				),
 				'2' => array(
-					'name' => '<a href="index.php?m=bbs&c=forum&a=my"><em class="icon_forum"></em>我的版块</a>',
+					'name' => '<a href="http://columbusxp.com/bbs/index.php?m=bbs&c=forum&a=my"><em class="icon_forum"></em>我的版块</a>',
 					'sign' => 'forum',
 				),
 				'3' => array(
-					'name' => '<a href="index.php?m=my&c=article"><em class="icon_article"></em>我的帖子</a>',
+					'name' => '<a href="http://columbusxp.com/bbs/index.php?m=my&c=article"><em class="icon_article"></em>我的帖子</a>',
 					'sign' => 'article',
 				),
 				'4' => array(
-					'name' => '<a href="index.php?m=vote&c=my"><em class="icon_vote"></em>我的投票</a>',
+					'name' => '<a href="http://columbusxp.com/bbs/index.php?m=vote&c=my"><em class="icon_vote"></em>我的投票</a>',
 					'sign' => 'vote',
 				),
 				'5' => array(
-					'name' => '<a href="index.php?m=task"><em class="icon_task"></em>我的任务</a>',
+					'name' => '<a href="http://columbusxp.com/bbs/index.php?m=task"><em class="icon_task"></em>我的任务</a>',
 					'sign' => 'task',
 				),
 				'6' => array(
-					'name' => '<a href="index.php?m=medal"><em class="icon_medal"></em>我的勋章</a>',
+					'name' => '<a href="http://columbusxp.com/bbs/index.php?m=medal"><em class="icon_medal"></em>我的勋章</a>',
 					'sign' => 'medal',
 				),
 			),
